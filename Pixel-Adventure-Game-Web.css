@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+body {
+
+    cursor: auto;
+
+}
+
+.bigmap {
+
+    display: flex;
+
+}
+
+.test {
+
+    display: flex;
+
+}
+
+.secb {
+
+    flex-direction: column;
+
+}
+
+.seca {
+
+    flex-direction: column-reverse;
+
+}
+
+.map {
+
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.a {
+
+    background-color: red;
+
+}
+
+.b {
+
+    background-color: green;
+
+}
+
+.c {
+
+    background-color: gray;
+
+}
+
+.d {
+
+    background-color: black;
+
+}
+
+.e {
+
+    background-color: coral;
+
+}
+
+.f {
+
+    background-color: indianred;
+
+}
+
+.player {
+
+    background-color: blue;
+    background-size: cover;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
