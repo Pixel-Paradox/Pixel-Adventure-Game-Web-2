@@ -11,7 +11,8 @@
 
 body {
 
-    cursor: auto;
+    cursor: none;
+    overflow: hidden;
 
 }
 
