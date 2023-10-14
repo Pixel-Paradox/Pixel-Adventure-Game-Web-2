@@ -55,7 +55,6 @@ document.addEventListener('keydown', function(event) {
 
         window.scrollTo(diffX, diffY);
     }
-    audio.play();
 });
 
 document.addEventListener("keydown", function(event) {
