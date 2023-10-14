@@ -9,91 +9,171 @@
 
 }
 
+html, body {
+
+    overflow: hidden;
+    cursor: none;
+    width: 3000px;
+    height: 3000px;
+    
+}
+
 body {
 
-    cursor: none;
-    overflow: hidden;
-
-}
-
-.bigmap {
-
-    display: flex;
-
-}
-
-.test {
-
-    display: flex;
-
-}
-
-.secb {
-
-    flex-direction: column;
-
-}
-
-.seca {
-
-    flex-direction: column-reverse;
-
-}
-
-.map {
-
-    width: 100vw;
-    height: 100vh;
-
-}
-
-.a {
-
-    background-color: red;
-
-}
-
-.b {
-
-    background-color: green;
-
-}
-
-.c {
-
-    background-color: gray;
-
-}
-
-.d {
-
-    background-color: black;
-
-}
-
-.e {
-
-    background-color: coral;
-
-}
-
-.f {
-
-    background-color: indianred;
+    background-color: rgb(28, 153, 28);
 
 }
 
 .player {
 
-    background-color: blue;
+    background-image: url(player.png);
     background-size: cover;
     background-position: center;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    transition: background-image 0.1s ease-in-out;
     margin: auto;
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+}
+
+.chemin {
+
+    background-image: url(chemin.png);
+    margin: auto;
+    position: absolute;
+    top: 850px;
+    left: 50px;
+    bottom: 0;
+    right: 0;
+    width: 110px;
+    height: 900px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 80px;
+    box-shadow: 7px 4px 30px 10px rgba(150,119,63,0.61);
+    transform: rotate(-5deg);
+}
+
+.chemin::before {
+
+    content: "";
+    background-image: url(chemin.png);
+    margin: auto;
+    position: absolute;
+    top: 720px;
+    left: 40px;
+    bottom: 0;
+    right: 0;
+    width: 800px;
+    height: 170px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 30px;
+    box-shadow: -31px 15px 30px 10px rgba(150,119,63,0.61);
+    transform: rotate(-15deg);
+
+}
+
+.chemin::after {
+
+    content: "";
+    background-image: url(chemin.png);
+    margin: auto;
+    position: absolute;
+    top: 700px;
+    left: 700px;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    width: 900px;
+    height: 100px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 19px -11px 37px 10px rgba(150,119,63,0.61);
+
+}
+
+.popup {
+
+    width: 500px;
+    height: 100px;
+    background-color: brown;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    border-radius: 20px;
+    border: 1px solid white;
+
+}
+
+.popuptxt {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.3em;
+    color: white;
+
+}
+
+.menu {
+
+    display: none;
+
+}
+
+.menu.active {
+
+    display: block;
+    cursor: pointer;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    background-color: blue;
+    width: 550px;
+    height: 352px;
+    overflow: auto;
+    border: 1px solid white;
+    border-radius: 30px;
+
+}
+
+.btn {
+
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    height: 87.6px;
+    color: white;
+    border-bottom: 1px solid white;
+
+}
+
+.easteregg {
+
+    margin: auto;
+    position: absolute;
+    top: 2900px;
+    left: 2900px;
     bottom: 0;
     right: 0;
 
