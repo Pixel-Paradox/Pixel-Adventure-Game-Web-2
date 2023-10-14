@@ -1,3 +1,7 @@
+if (window.location.protocol != "https:") {
+    window.location.protocol="https:";
+}  
+
 const popup = document.querySelector(".popup");
 const player = document.querySelector(".player");
 const audio = document.querySelector(".audio");
