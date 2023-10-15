@@ -1,7 +1,11 @@
-if (window.location.protocol != "https:") {
+/*if (window.location.protocol != "https:") {
     window.location.protocol="https:";
-}  
+}*/
 
+/*if (window.matchMedia("(max-width: 425px)").matches) {
+    window.location.href = "https://github.com/Pixel-Paradox/Pixel-Adventure-Game-Web";
+}*/
+  
 const popup = document.querySelector(".popup");
 const player = document.querySelector(".player");
 const audio = document.querySelector(".audio");
