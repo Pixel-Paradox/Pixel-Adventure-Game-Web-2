@@ -1,12 +1,16 @@
-
 <!DOCTYPE html>
 
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="stylesheet" type="text/css" href="Pixel-Adventure-Game-Web.css">
-        <script defer src="Pixel-Adventure-Game-Web.js"></script>
+        <script defer src="Debut.js"></script>
+        <script defer src="MapPlayer.js"></script>
+        <script defer src="Menu.js"></script>
+        <link rel="stylesheet" type="text/css" href="Debut.css">
+        <link rel="stylesheet" type="text/css" href="Map.css">
+        <link rel="stylesheet" type="text/css" href="Player.css">
+        <link rel="stylesheet" type="text/css" href="Menu.css">
         <link rel="icon" href="Pixel-Adventure.ico" type="image/x-icon">
         <link rel="icon" href="Pixel-Adventure.png" type="image/png">
         <link rel="icon" type="image/svg+xml" href="Pixel-Adventure.svg">
@@ -14,7 +18,10 @@
     </head>
 
     <body>
-        <div class="popup">
+        <div class="popupDebut">
+            <p class="popuptxt">W, A, S, D: Se déplacer</p>
+            <p class="popuptxt">E: Ouvrir les coffres</p>
+            <p class="popuptxt">ESC: Ouvrir le menu</p>
             <p class="popuptxt">Appuyer sur n'importe quelle touche pour jouer.</p>
         </div>
 
@@ -30,7 +37,7 @@
 
         <div class="player"></div>
 
-        <div class="chemin"></div>
-        <p class="easteregg">easteregg</p>
+        <div class="coffre a"></div>
+        <div class="coffre b"></div>
     </body>
 </html>

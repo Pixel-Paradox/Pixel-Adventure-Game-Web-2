@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.popupDebut {
+
+  width: 500px;
+  height: 245px;
+  background-color: brown;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  border-radius: 20px;
+  border: 1px solid white;
+
+}
+
+.popuptxt {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-size: 1.3em;
+  color: white;
+  border-bottom: 1px solid white;
+
+}
+
+.popuptxt:last-child {
+
+  border: 0px;
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .popuptxt {
+
+    height: 60px;
+    font-size: 1em;
+
+  }
+
+  .popupDebut {
+
+    width: 400px;
+    height: 240px;
+  
+  }
+}

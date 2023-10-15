@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+html, body {
+
+    cursor: none;
+    overflow: hidden;
+    width: 3000px;
+    height: 3000px;
+    user-select: none;
+    
+}
+
+body {
+
+    background-image: url(background.png);
+
+}
+
+.coffre {
+
+    background-image: url(coffre.png);
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    margin: auto;
+    position: absolute;
+
+}
+
+.coffre.a {
+
+    top: 0;
+    left: 700px;
+    bottom: 0;
+    right: 0;
+    
+}
+
+.coffre.b {
+
+    top: 700px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
