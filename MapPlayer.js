@@ -1,19 +1,18 @@
 const coffreA = document.querySelector(".coffre.a");
-const coffre = document.querySelector(".coffre");
-const coffreB= document.querySelector(".coffre.b");
+const coffreB = document.querySelector(".coffre.b");
 const player = document.querySelector(".player");
 const body = document.body;
 
 let posX = 0;
 let posY = 0;
 
-document.addEventListener("contextmenu", function(event) {
+document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
 });
 
 let step = 18;
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
 
     if (popupDebut.style.display !== 'none') {
         popupDebut.style.display = 'none';
@@ -56,19 +55,22 @@ document.addEventListener('keydown', function(event) {
         const distanceCoffreA = calculateDistance(player, coffreA);
         const distanceCoffreB = calculateDistance(player, coffreB);
 
-        if (event.key === 'e' && distanceCoffreA < 70) {
+        if (event.key === 'e' && distanceCoffreA < 60 && playerIsInFrontOfChest(player, coffreA)) {
             coffreA.style.backgroundImage = "url('coffreActive.png')";
             step = 100;
-            player.style.width =  700 + "px"
-            player.style.height = 700 + "px"
+            player.style.width = 700 + "px";
+            player.style.height = 700 + "px";
         }
-
-        if (event.key === 'e' && distanceCoffreB < 70) {
+        
+        if (event.key === 'e' && distanceCoffreB < 60 && playerIsInFrontOfChest(player, coffreB)) {
             coffreB.style.backgroundImage = "url('coffreActive.png')";
             step = 10;
-            player.style.width =  50 + "px"
-            player.style.height = 50 + "px"
+            player.style.width = 50 + "px";
+            player.style.height = 50 + "px";
         }
+
+        collision(player.getBoundingClientRect(), coffreA.getBoundingClientRect());
+        collision(player.getBoundingClientRect(), coffreB.getBoundingClientRect());
     }
 });
 
@@ -76,4 +78,15 @@ function calculateDistance(elem1, elem2) {
     const a = elem1.offsetLeft - elem2.offsetLeft;
     const b = elem1.offsetTop - elem2.offsetTop;
     return Math.sqrt(a * a + b * b);
+}
+
+function playerIsInFrontOfChest(player, chest) {
+    const playerRect = player.getBoundingClientRect();
+    const chestRect = chest.getBoundingClientRect();
+    const playerCenterX = playerRect.x + playerRect.width / 2;
+    const chestCenterX = chestRect.x + chestRect.width / 2;
+    const playerBottom = playerRect.y + playerRect.height;
+    const chestTop = chestRect.y;
+
+    return Math.abs(playerCenterX - chestCenterX) < chestRect.width / 2 && playerBottom >= chestTop;
 }
