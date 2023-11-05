@@ -3,9 +3,10 @@ const menu = document.querySelector(".menu");
 const reprendre = document.querySelector(".reprendre");
 const ecran = document.querySelector(".ecran");
 const musique = document.querySelector(".musique");
+const recommencer = document.querySelector(".recommencer");
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
+    if (event.key === "q") {
         menu.classList.toggle("active");
         body.classList.toggle("active");
     }
@@ -63,3 +64,8 @@ musique.onclick = function() {
         musique.textContent = "Mettre la musique";
     }
 };
+
+recommencer.onclick = function() {
+    location.reload()
+    localStorage.clear();
+}

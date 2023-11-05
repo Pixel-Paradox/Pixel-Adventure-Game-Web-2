@@ -1,5 +1,6 @@
 const coffreA = document.querySelector(".coffre.a");
 const coffreB = document.querySelector(".coffre.b");
+const coffreC = document.querySelector(".coffre.c");
 const player = document.querySelector(".player");
 const body = document.body;
 
@@ -10,9 +11,13 @@ document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
 });
 
-let step = 18;
+let step = 17;
 
 document.addEventListener('keydown', function (event) {
+    if (menu.classList.contains('active')) {
+        event.preventDefault();
+        return;
+    }
 
     if (popupDebut.style.display !== 'none') {
         popupDebut.style.display = 'none';
@@ -54,12 +59,14 @@ document.addEventListener('keydown', function (event) {
 
         const distanceCoffreA = calculateDistance(player, coffreA);
         const distanceCoffreB = calculateDistance(player, coffreB);
+        const distanceCoffreC = calculateDistance(player, coffreC);
 
         if (event.key === 'e' && distanceCoffreA < 60 && playerIsInFrontOfChest(player, coffreA)) {
             coffreA.style.backgroundImage = "url('coffreActive.png')";
             step = 100;
             player.style.width = 700 + "px";
             player.style.height = 700 + "px";
+            localStorage.setItem('coffreAActive', 'true');
         }
         
         if (event.key === 'e' && distanceCoffreB < 60 && playerIsInFrontOfChest(player, coffreB)) {
@@ -67,12 +74,49 @@ document.addEventListener('keydown', function (event) {
             step = 10;
             player.style.width = 50 + "px";
             player.style.height = 50 + "px";
+            localStorage.setItem('coffreBActive', 'true');
         }
-
-        collision(player.getBoundingClientRect(), coffreA.getBoundingClientRect());
-        collision(player.getBoundingClientRect(), coffreB.getBoundingClientRect());
+        
+        if (event.key === 'e' && distanceCoffreC < 60 && playerIsInFrontOfChest(player, coffreC)) {
+            coffreC.style.backgroundImage = "url('coffreActive.png')";
+            player.style.transition = "2s";
+            localStorage.setItem('coffreCActive', 'true');
+        }
+        localStorage.setItem('playerPositionX', posX);
+        localStorage.setItem('playerPositionY', posY);
     }
 });
+
+window.onload = function() {
+    const savedPosX = localStorage.getItem('playerPositionX');
+    const savedPosY = localStorage.getItem('playerPositionY');
+
+    if (savedPosX !== null && savedPosY !== null) {
+        posX = parseInt(savedPosX);
+        posY = parseInt(savedPosY);
+        player.style.left = posX + 'px';
+        player.style.top = posY + 'px';
+    }
+};
+
+if (localStorage.getItem('coffreBActive') === 'true') {
+    coffreB.style.backgroundImage = "url('coffreActive.png')";
+    step = 10;
+    player.style.width = 50 + "px";
+    player.style.height = 50 + "px";
+}
+
+if (localStorage.getItem('coffreAActive') === 'true') {
+    coffreA.style.backgroundImage = "url('coffreActive.png')";
+    step = 100;
+    player.style.width = 700 + "px";
+    player.style.height = 700 + "px";
+}
+
+if (localStorage.getItem('coffreCActive') === 'true') {
+    coffreC.style.backgroundImage = "url('coffreActive.png')";
+    player.style.transition = "2s";
+}
 
 function calculateDistance(elem1, elem2) {
     const a = elem1.offsetLeft - elem2.offsetLeft;

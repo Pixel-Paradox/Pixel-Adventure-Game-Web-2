@@ -11,17 +11,20 @@
 
 html, body {
 
-
+    cursor: none;
     overflow: hidden;
     width: 3000px;
     height: 3000px;
     user-select: none;
-    
+    background-color: #509B66;
+
 }
 
-body {
+html {
 
-    background-color: #509B66;
+    border: 40px solid #376b47;
+    width: 3080px;
+    height: 3080px; 
 
 }
 
@@ -51,6 +54,28 @@ body {
 
     top: 700px;
     left: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+.coffre.c {
+
+    top: 2000px;
+    left: 2000px;
+    bottom: 0;
+    right: 0;
+
+}
+
+.easteregg {
+
+    margin: auto;
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    top: 3000px;
+    left: 1000px;
     bottom: 0;
     right: 0;
 

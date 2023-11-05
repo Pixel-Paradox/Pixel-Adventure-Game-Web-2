@@ -11,7 +11,20 @@
 
 .menu {
 
-    display: none;
+    transform: scale(0);
+    transition: 1s;
+    display: block;
+    cursor: pointer;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    width: 500px;
+    height: 350px;
+    position: fixed;
+    border-radius: 20px;
 
 }
 
@@ -24,25 +37,13 @@ body.active {
 body.active > *:not(.menu.active) {
 
     opacity: 0.6;
-    cursor: auto;
+    transition: 1.3s;
     
 }
 
 .menu.active {
 
-    display: block;
-    cursor: pointer;
-    margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 10000;
-    width: 500px;
-    height: 282px;
-    position: fixed;
-    border: 1px solid white;
-    border-radius: 20px;
+    transform: scale(1);
 
 }
 
@@ -57,6 +58,9 @@ body.active > *:not(.menu.active) {
     color: white;
     z-index: -100;
     border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    transition: all 10s;
 
 }
 
@@ -64,7 +68,13 @@ body.active > *:not(.menu.active) {
 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border-top: 1px solid white;
 
+}
+
+.btn.recommencer {
+
+    border-bottom: 0px;
 }
 
 .btn.code {
@@ -73,7 +83,6 @@ body.active > *:not(.menu.active) {
     border-bottom-right-radius: 20px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    border-bottom: 0px;
 
 }
 
